@@ -1,0 +1,55 @@
+<!--
+Author: Yue Xu
+Date: 2/21/2019
+comment: Add a Header with a title, "Customer Information"
+         Collects the users First Name, Last Name, and E-mail
+         Add a button labeled, "Submit"
+		Style your page with a .css file
+-->
+
+<html>
+<title>Customer Information </title>
+
+<!--reference to my css file-->
+<link rel = "stylesheet" type = "text/css" href= "css.css"/>
+
+<!--JavaScript Form Validation   
+to use javascript to avoid user left blank-->
+<script>
+function validateForm()
+{
+	var x = document.forms["customerInfo"]["user_firstname"].value;
+		y = document.forms["customerInfo"]["user_lastname"].value;
+		z = document.forms["customerInfo"]["user_email"].value;
+	if (x == "")
+		{
+		alert ("First name must be filled out")
+		}
+	if (y == "")
+		{
+		alert ("Last name must be filled out")
+		}
+	if (z == "")
+		{
+		alert("E-mail must be filled out")
+		}
+		return false;
+}
+
+</script>
+<body>
+	 <!--paragraphy-->
+      <h2>Customer Information</h2>
+	  
+	  <!-- input& submit-->
+	  <!--call function-->
+	  <form name="customerInfo" method = "post" onsubmit=" validateForm()">
+	  <br>First Name: <input type ="firstname" name = "user_firstname"  min="1" max ="20"  /></br>
+	  <br>Last Name : <input type = "lastname" name = "user_lastname" min="1" max ="20"/></br>
+	  <br>E-mail    : <input type = "email" name = "user_email"/></br>
+	  <input type = "submit"/>
+	  </form>
+	  
+	  
+</body>
+</html>
